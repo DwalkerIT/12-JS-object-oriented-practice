@@ -53,6 +53,23 @@ function expect(target) {
 // ????????
 // ????????
 // ????????
+function Dog(obj) {
+  this.status = 'normal'
+  if (obj) {
+    this.color = obj.color
+    if ('hungry' in obj) {
+      this.hungry = obj.hungry
+    } else
+    this.hungry = true
+  }
+}
+function Human(obj) {
+if (obj) {
+  this.cool = obj.cool
+} else {
+  this.cool = false
+}
+}
 
 //        __
 //   ____/ /___  ____ ______
@@ -80,10 +97,21 @@ var atticus = new Dog()
 
 var mason = new Human()
 
+// mason.pet = function () {}
+
 var julia = new Human({
   cool: true,
 })
 
+// julia.feed = function () {}
+
+human.prototype.pet = funtion (dog) {
+dog.status = 'happy' 
+//console.log(dog)
+}
+human.prototype.feed = function () {
+
+}
 //                     __           __  __    _                             __
 //    ____ ___  ____ _/ /_____     / /_/ /_  (_)____   _      ______  _____/ /__
 //   / __ `__ \/ __ `/ //_/ _ \   / __/ __ \/ / ___/  | | /| / / __ \/ ___/ //_/
